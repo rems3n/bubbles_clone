@@ -1,8 +1,92 @@
+/* Styles for extra small to medium screens (default) */
+.navbar {
+    padding-left: 5%; /* Example for smaller screens */
+    padding-right: 5%;
+}
+
+/* Styles for large screens and up */
+@media (min-width: 992px) { /* Adjust 992px based on the specific breakpoint you want to target */
+    .navbar {
+        padding-left: 5%;
+        padding-right: 10%;
+    }
+}
+
+
 #animation {
     margin-top: 10px;
 }
 
-#initialContentBlock {
-    padding-left: 10px;
-    padding-right: 10px;
+#button {
+    width: 300px;
 }
+
+.dark {
+    font: #FFFFFF;
+    background-color: #13121C;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#initialContentBlock {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#iconCarousel {
+    overflow: hidden; /* Hide the overflow to create the fading effect */
+    margin-bottom: 30px;
+}
+  
+.client-icon-row img {
+    margin-left: 1.5rem; /* Same as mx-4 */
+    margin-right: 1.5rem; /* Same as mx-4 */
+    animation-duration: 20s; /* Duration of the animation */
+    animation-timing-function: linear; /* Keep the animation speed consistent */
+    animation-iteration-count: infinite; /* Repeat the animation forever */
+}
+
+.client-icon-row:first-child {
+    animation-name: moveLeft; /* Assign the left-moving animation to the top row */
+}
+
+.client-icon-row:last-child {
+    animation-name: moveRight; /* Assign the right-moving animation to the bottom row */
+}
+  
+  /* Create keyframes for the left-moving animation */
+@keyframes moveLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%); /* Move the icons to the left */
+    }
+}
+  
+/* Create keyframes for the right-moving animation */
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%); /* Move the icons to the right */
+    }
+}
+
+/* Create fading effect on the sides */
+.carousel-inner::before,
+.carousel-inner::after {
+content: "";
+position: absolute;
+top: 0;
+width: 10%; /* Width of the fade effect */
+height: 100%;
+z-index: 2;
+background: linear-gradient(to right, #fff, transparent);
+}
+
+.carousel-inner::after {
+right: 0;
+transform: rotateZ(180deg);
+}
+  

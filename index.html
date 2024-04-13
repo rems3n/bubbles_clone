@@ -10,6 +10,7 @@
     <!-- Popper.js, and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Header with navbar-->
@@ -55,36 +56,76 @@
     </nav>
     
     <!-- Intro paragraph w/ button and video-->
-    <div class="container-lg-2">
+    <div class="container-fluid-lg-2">
         <div class="row" id="">
             <div class="col-12 col-lg-6 text-align-center" id="initialContentBlock">
-                <div class="text-lg-start text-center" >
+                <div class="text-lg-start text-center" style="margin-top: 30px;">
                     <h1>Get Back Your <em id="">Focus Time</em></h1>
                 </div>
                 <div class="text-lg-start text-center">
                     Change meetings from time-sinks to time-savers. Record with AI action items, catch-up and repond on your own time, or switch to async-first video conversations instead of live meetings.</p>
                 </div>
                 <div class="text-lg-start text-center">
-                    <button><strong>Try free</strong> in &lt; 2 minutes</button>
+                    <button style="margin-bottom: 15px"><strong>Try free</strong> in &lt; 2 minutes</button>
                     <p>Works with: <img src="icons/workswith.svg"></p>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 text-center" id="animation">
+            <div class="col-12 col-lg-6 text-center" id="animation" style="padding: 30px;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             </div>
         </div>
     </div>
     <!-- rotating icons-->
-    <div class="container">
-        <div class="col">
-
+    <div id="iconCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="false">
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- Top row of icons -->
+            <div class="client-icon-row d-flex justify-content-center">
+              <!-- Add your icons here -->
+              <img src="icons/client_carousel/amazon.svg">
+              <img src="icons/client_carousel/cisco.svg">
+              <img src="icons/client_carousel/google.svg">
+              <img src="icons/client_carousel/ibm.svg">
+              <img src="icons/client_carousel/mckinsey.svg">
+              <img src="icons/client_carousel/salesforce.svg">
+              <img src="icons/client_carousel/twitch.svg">
+            </div>
+            <!-- Bottom row of icons -->
+            <div class="client-icon-row d-flex justify-content-center flex-row-reverse">
+              <!-- Add your icons here -->
+              <img src="icons/client_carousel/amazon.svg">
+              <img src="icons/client_carousel/cisco.svg">
+              <img src="icons/client_carousel/google.svg">
+              <img src="icons/client_carousel/ibm.svg">
+              <img src="icons/client_carousel/mckinsey.svg">
+              <img src="icons/client_carousel/salesforce.svg">
+              <img src="icons/client_carousel/twitch.svg">
+            </div>
+          </div>
+          <!-- You can add more .carousel-item elements for additional slides -->
         </div>
-        <div class="w-100"></div>
-        <div class="col">
-
+      </div>
+    <!--demo video supercharge section-->     
+    </div>
+    <div class="container-fluid dark">
+        <div class="row">
+            <div class="col-12 text-center" style="margin-top: 20px; margin-bottom: 20px; font-size: 20px; color: #FFFFFF">
+                &#x26A1; Supercharge your meeting productivity
+            </div>
+            <div class="col-12 text-center" style="margin-bottom: 20px; color: #FFFFFF" >
+                Learn how in less than 90 seconds by watching the video below.
+            </div>
         </div>
-    </div>        
+        <div class="rpw">
+            <div class="col-12 text-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-12 text-center" style="margin-top: 20px; margin-bottom: 20px; color: #FFFFFF">
+            <button id="button"><strong>Get started now </strong> -- it's 100% free</button> 
+        </div>
     </div>
     <div class="container">
         
@@ -101,8 +142,15 @@
     <div class="container">
         
     </div>
-    <div class="container">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var myCarousel = document.querySelector('.carousel');
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 2000,
+                wrap: false
+            });
+        });
+        </script>
         
-    </div>
 </body>
 </html>
